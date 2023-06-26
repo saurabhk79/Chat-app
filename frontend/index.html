@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatO</title>
+
+    <!-- The favicon over here  -->
+    <link rel="shortcut icon" href="/public/favicon.png" type="image/x-icon" />
+    <!-- Font awesome js file over here -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Socket io client cdn is here -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"
+    ></script>
+
+    <!--Bootstrap Stylesheets over here -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <script defer src="./client.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Login page over here -->
+    <div id="login-page">
+      <div class="login-wrapper">
+        <h1>
+          <img
+            src="./public/favicon.png"
+            style="display: inline"
+            height="80"
+            alt="logo"
+          />
+          ChatO
+        </h1>
+        <h3>Welcome</h3>
+        <p>Let's get you started!!</p>
+
+        <form>
+          <label for="user-name-input">Username*</label>
+          <br />
+          <input
+            type="text"
+            id="user-name-input"
+            placeholder="Enter user name..."
+            required
+          />
+          <div class="sub-btn">
+            <button type="submit" id="login-button">
+              Take me!<i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+          <div
+            class="text-danger text-center pointer"
+            data-bs-toggle="modal"
+            data-bs-target="#infoModal"
+          >
+            What is it?
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Home page over here -->
+    <div id="home-page">
+      <!-- Side bar of the chat section over here -->
+      <div class="name-section">
+        <h1>
+          <img
+            src="./public/favicon.png"
+            style="display: inline"
+            height="80"
+            alt=""
+          />
+        </h1>
+
+        <div class="online-users-box">
+          <small>Users</small>
+          <div id="total-count"></div>
+        </div>
+        <hr />
+
+        <!-- Chat members are displayed over here. -->
+        <div id="members"></div>
+      </div>
+
+      <!-- The chat section over here -->
+      <div class="chat-section">
+        <!-- Top of the chat section over here -->
+        <div class="chat-bar">
+          <div id="me-profile"></div>
+          <div id="name-section-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+
+        <!-- The chatting part of the chat section over here -->
+        <div id="chat-container">
+          <div class="chat-info">
+            <small class="chat-info-box">
+              Hey, there! Saurabh and Aditya, this side. Feel free to talk about
+              anything. And don&apos;t fear, we assure that nothing is going to
+              be leaked. It's 100% safe and secure. Please keep the chat
+              abuse-free and enjoy the chat.
+            </small>
+          </div>
+        </div>
+
+        <!-- Messaging part of the chat section over here -->
+        <div class="chat-input-wrapper">
+          <form id="chat-input">
+            <input type="text" id="user-msg-input" placeholder="Type here..." />
+            <button type="submit" id="msg-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================= -->
+    <!-- Modals here -->
+    <!-- ============================= -->
+    <!-- What is chatO -->
+    <div class="modal fade" id="infoModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h1>
+              <img
+                src="./public/favicon.png"
+                style="display: inline"
+                height="80"
+                alt="logo"
+              />
+              ChatO
+            </h1>
+
+            <p>
+              Chat one i.e. ChatO, is an abnormal place for the abnormal people
+              that becomes one and only, just by opening themselves up on the
+              chatO. Simply said, ChatO is chat application that makes us to
+              connect and tells us how we should feel while chatting. Maybe, we
+              should put on some beautiful and engaging themes, make seamless
+              chat with no offense and talk what we love.
+            </p>
+
+            <p>
+              Overall, ChatO is the place we must atleast visit once in order to
+              experience the chat one never experienced.
+            </p>
+            <div class="text-end mt-4">
+              Made with love<i
+                class="fa-solid fa-heart"
+                style="color: #ff0059"
+              ></i>
+              <br />by Saurabh, and <br />Aditya Mani Gautam
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap js cdn over here -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
